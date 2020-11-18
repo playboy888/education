@@ -7,15 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="service_user" />
+        <module name="utils" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="common" target="1.8" />
       <module name="edu-user" target="1.5" />
-      <module name="educationJava" target="1.5" />
+      <module name="educationJava" target="1.8" />
       <module name="eduuser" target="1.5" />
-      <module name="service" target="1.5" />
+      <module name="service" target="1.8" />
       <module name="service_edu" target="1.5" />
-      <module name="service_user" target="1.5" />
+      <module name="service_user" target="1.8" />
+      <module name="utils" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

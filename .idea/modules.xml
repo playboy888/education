@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
       <module fileurl="file://$PROJECT_DIR$/educationJava.iml" filepath="$PROJECT_DIR$/educationJava.iml" />
       <module fileurl="file://$PROJECT_DIR$/service/service.iml" filepath="$PROJECT_DIR$/service/service.iml" />
       <module fileurl="file://$PROJECT_DIR$/service/service_user/service_user.iml" filepath="$PROJECT_DIR$/service/service_user/service_user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common/utils/utils.iml" filepath="$PROJECT_DIR$/common/utils/utils.iml" />
     </modules>
   </component>
 </project>

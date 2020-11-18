@@ -1,6 +1,7 @@
 package com.playboy.user.service;
 
 import com.playboy.result.JsonResult;
+import com.playboy.user.entity.EduJude;
 import com.playboy.user.entity.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -49,4 +50,12 @@ public interface EduTeacherService extends IService<EduTeacher> {
      * @return
      */
     JsonResult deleteUser(String id);
+
+    /**
+     * 分页查询
+     * @param size  当前页显示个数
+     * @param current 页数
+     * @return
+     */
+    JsonResult queryList(int size,int current,EduJude eduJude);
 }

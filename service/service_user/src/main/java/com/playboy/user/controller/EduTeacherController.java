@@ -11,12 +11,11 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -68,13 +67,12 @@ public class EduTeacherController {
 
     /**
      * 分页条件查询
-     * @param size
-     * @param current
+     * @param eduJude
      * @return
      */
     @RequestMapping(value = "/queryList", produces = "application/json;charset=utf-8", method = {RequestMethod.GET, RequestMethod.POST})
-    public JsonResult queryList(int size, int current,@RequestBody(required = false) EduJude eduJude) {
-        return eduTeacherServiceImpl.queryList(size, current,eduJude);
+    public JsonResult queryList(@RequestBody(required = false) EduJude eduJude) throws ParseException {
+        return eduTeacherServiceImpl.queryList(eduJude);
     }
 
     /**
@@ -94,9 +92,19 @@ public class EduTeacherController {
      * @param id
      * @return
      */
-    @RequestMapping(value = "/findAll", produces = "application/json;charset=utf-8", method = {RequestMethod.GET, RequestMethod.POST})
+    @RequestMapping(value = "/deleteUser", produces = "application/json;charset=utf-8", method = {RequestMethod.GET, RequestMethod.POST})
     public JsonResult deleteUser(String id) {
         return eduTeacherServiceImpl.deleteUser(id);
+    }
+
+    /**
+     * 文件上传接口
+     * @return
+     */
+//    @AppIdAuthorization
+    @RequestMapping(value="/upload",method = {RequestMethod.GET, RequestMethod.POST})
+    public JsonResult uploadFileTest(@RequestParam("file") MultipartFile zipFile) throws IOException {
+        return eduTeacherServiceImpl.uploadFileTest(zipFile);
     }
 }
 

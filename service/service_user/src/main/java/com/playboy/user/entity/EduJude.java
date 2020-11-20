@@ -5,6 +5,8 @@ import lombok.Data;
 
 @Data
 public class EduJude {
+    private  int size;
+    private  int current;
     @ApiModelProperty(value = "模糊查询",example = "王")
     private String name;
     @ApiModelProperty(value="等级",example = "0")

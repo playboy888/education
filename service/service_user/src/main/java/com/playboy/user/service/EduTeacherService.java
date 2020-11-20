@@ -4,7 +4,10 @@ import com.playboy.result.JsonResult;
 import com.playboy.user.entity.EduJude;
 import com.playboy.user.entity.EduTeacher;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -53,9 +56,15 @@ public interface EduTeacherService extends IService<EduTeacher> {
 
     /**
      * 分页查询
-     * @param size  当前页显示个数
-     * @param current 页数
+     *
      * @return
      */
-    JsonResult queryList(int size,int current,EduJude eduJude);
+    JsonResult queryList(EduJude eduJude) throws ParseException;
+
+    /**
+     * 文件上传
+     * @param zipFile
+     * @return
+     */
+    public JsonResult uploadFileTest(MultipartFile zipFile) throws IOException;
 }
